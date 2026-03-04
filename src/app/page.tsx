@@ -55,15 +55,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Mascot — colorful, prominent */}
+            {/* Watermelon character — right side of hero */}
             <div className="relative hidden lg:flex items-center justify-center">
-              <div className="absolute w-[360px] h-[360px] rounded-full border border-dashed border-[#FF6B9D]/10 animate-spin-slow" />
+              <div className="absolute w-[360px] h-[360px] rounded-full border border-dashed border-[#4ADE80]/10 animate-spin-slow" />
               <div className="relative animate-float-gentle">
-                <div className="absolute inset-0 bg-[#FF6B9D]/15 rounded-full blur-[80px] scale-90" />
-                <Image src="/images/watermelon-character.png" alt="Fruitful watermelon mascot" width={300} height={300} className="relative drop-shadow-[0_0_60px_rgba(255,107,157,0.25)]" priority />
-              </div>
-              <div className="absolute -bottom-6 -left-10 animate-float-offset">
-                <Image src="/images/crate-gold-clean.png" alt="Golden crate" width={90} height={90} className="drop-shadow-[0_0_20px_rgba(255,200,50,0.3)]" />
+                <div className="absolute inset-0 bg-[#4ADE80]/10 rounded-full blur-[80px] scale-90" />
+                <Image src="/images/watermelon-character.png" alt="Fruitful watermelon mascot" width={320} height={320} className="relative drop-shadow-[0_0_60px_rgba(74,222,128,0.2)]" priority />
               </div>
             </div>
           </div>
@@ -314,10 +311,7 @@ export default function Home() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] bg-[#FF6B9D]/[0.04] rounded-full blur-[120px]" />
 
         <div className="relative max-w-2xl mx-auto px-5 sm:px-8 text-center">
-          <div className="reveal mb-6">
-            <Image src="/images/watermelon-character.png" alt="Fruitful mascot" width={72} height={72} className="mx-auto drop-shadow-[0_0_20px_rgba(255,107,157,0.2)]" />
-          </div>
-          <h2 className="reveal delay-1 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-[family-name:var(--font-heading)] tracking-tight leading-tight mb-4">
+          <h2 className="reveal text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-[family-name:var(--font-heading)] tracking-tight leading-tight mb-4">
             Ready to end the<br /><span className="gradient-text-warm">screen time battle?</span>
           </h2>
           <p className="reveal delay-2 text-[#AAA] text-base mb-8">Free for 7 days. Cancel anytime. Your family deserves this.</p>
