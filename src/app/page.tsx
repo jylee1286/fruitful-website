@@ -60,7 +60,7 @@ export default function Home() {
               <div className="absolute w-[360px] h-[360px] rounded-full border border-dashed border-[#FF6B9D]/10 animate-spin-slow" />
               <div className="relative animate-float-gentle">
                 <div className="absolute inset-0 bg-[#FF6B9D]/15 rounded-full blur-[80px] scale-90" />
-                <Image src="/images/mascot-hero.png" alt="Fruitful watermelon mascot" width={300} height={300} className="relative drop-shadow-[0_0_60px_rgba(255,107,157,0.25)]" priority />
+                <Image src="/images/watermelon-character.png" alt="Fruitful watermelon mascot" width={300} height={300} className="relative drop-shadow-[0_0_60px_rgba(255,107,157,0.25)]" priority />
               </div>
               <div className="absolute -bottom-6 -left-10 animate-float-offset">
                 <Image src="/images/crate-gold-clean.png" alt="Golden crate" width={90} height={90} className="drop-shadow-[0_0_20px_rgba(255,200,50,0.3)]" />
@@ -315,7 +315,7 @@ export default function Home() {
 
         <div className="relative max-w-2xl mx-auto px-5 sm:px-8 text-center">
           <div className="reveal mb-6">
-            <Image src="/images/mascot-hero.png" alt="Fruitful mascot" width={72} height={72} className="mx-auto drop-shadow-[0_0_20px_rgba(255,107,157,0.2)]" />
+            <Image src="/images/watermelon-character.png" alt="Fruitful mascot" width={72} height={72} className="mx-auto drop-shadow-[0_0_20px_rgba(255,107,157,0.2)]" />
           </div>
           <h2 className="reveal delay-1 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-[family-name:var(--font-heading)] tracking-tight leading-tight mb-4">
             Ready to end the<br /><span className="gradient-text-warm">screen time battle?</span>
