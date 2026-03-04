@@ -37,7 +37,7 @@ export function CharacterCards() {
         Every character has 4 versions. Rarer cards come from better crates.
       </p>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 max-w-5xl mx-auto">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 max-w-5xl mx-auto">
         {cards.map((card, i) => (
           <div
             key={card.rarity}

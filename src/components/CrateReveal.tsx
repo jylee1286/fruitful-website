@@ -59,7 +59,7 @@ export function CrateReveal() {
           alt="Fruitful fruit crate"
           width={692}
           height={875}
-          className="relative w-[240px] sm:w-[280px] lg:w-[320px] h-auto drop-shadow-[0_0_40px_rgba(255,200,50,0.2)]"
+          className="relative w-[280px] sm:w-[300px] lg:w-[320px] h-auto drop-shadow-[0_0_40px_rgba(255,200,50,0.2)]"
           quality={90}
         />
       </div>

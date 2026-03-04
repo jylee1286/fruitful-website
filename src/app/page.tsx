@@ -55,12 +55,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Watermelon character — right side of hero */}
-            <div className="relative hidden lg:flex items-center justify-center w-[360px] shrink-0">
-              <div className="absolute w-[360px] h-[360px] rounded-full border border-dashed border-[#4ADE80]/10 animate-spin-slow" />
+            {/* Watermelon character — mobile: small centered above, desktop: right side */}
+            <div className="relative flex items-center justify-center w-[160px] h-[160px] lg:w-[360px] lg:h-auto shrink-0 mx-auto lg:mx-0 -mt-8 mb-4 lg:mt-0 lg:mb-0 order-first lg:order-last">
+              <div className="absolute w-[160px] h-[160px] lg:w-[360px] lg:h-[360px] rounded-full border border-dashed border-[#4ADE80]/10 animate-spin-slow" />
               <div className="relative animate-float-gentle">
                 <div className="absolute inset-0 bg-[#4ADE80]/10 rounded-full blur-[80px] scale-90" />
-                <Image src="/images/watermelon-character.png" alt="Fruitful watermelon mascot" width={320} height={320} className="relative drop-shadow-[0_0_60px_rgba(74,222,128,0.2)]" priority />
+                <Image src="/images/watermelon-character.png" alt="Fruitful watermelon mascot" width={320} height={320} className="relative w-[120px] lg:w-[320px] h-auto drop-shadow-[0_0_60px_rgba(74,222,128,0.2)]" priority />
               </div>
             </div>
           </div>
@@ -134,36 +134,46 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Three phone mockups */}
-          <div className="reveal delay-3 flex flex-col sm:flex-row items-end justify-center gap-6 sm:gap-8 lg:gap-10">
-            {/* Phone 1 — Dashboard (center, tallest) */}
-            <div className="relative order-2 sm:order-2 z-10">
-              <div className="relative w-[240px] sm:w-[260px] lg:w-[280px]">
+          {/* Phone mockups — 1 on mobile, 3 on sm+ */}
+          <div className="reveal delay-3">
+            {/* Mobile: single Dashboard phone */}
+            <div className="flex sm:hidden justify-center">
+              <div className="relative w-[260px]">
                 <div className="rounded-[2.5rem] border-[5px] border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden shadow-2xl shadow-black/60">
                   <Image src="/images/app-screenshot-dashboard.png" alt="Fruitful dashboard — screen time tracking" width={1179} height={2556} className="w-full h-auto" quality={90} />
                 </div>
+                <p className="text-center mt-4 text-[10px] font-bold text-[#FF6B9D] uppercase tracking-wider font-[family-name:var(--font-heading)]">Dashboard</p>
               </div>
-              <p className="text-center mt-4 text-[10px] font-bold text-[#FF6B9D] uppercase tracking-wider font-[family-name:var(--font-heading)]">Dashboard</p>
             </div>
 
-            {/* Phone 2 — Family (left, slightly smaller) */}
-            <div className="relative order-1 sm:order-1 sm:-mb-8">
-              <div className="relative w-[210px] sm:w-[230px] lg:w-[250px]">
-                <div className="rounded-[2.3rem] border-[5px] border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden shadow-xl shadow-black/50">
-                  <Image src="/images/app-screenshot-family.png" alt="Fruitful family — manage members and share code" width={1179} height={2556} className="w-full h-auto" quality={90} />
+            {/* Desktop: 3 phones side by side */}
+            <div className="hidden sm:flex items-end justify-center gap-8 lg:gap-10">
+              <div className="relative sm:-mb-8">
+                <div className="relative w-[230px] lg:w-[250px]">
+                  <div className="rounded-[2.3rem] border-[5px] border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden shadow-xl shadow-black/50">
+                    <Image src="/images/app-screenshot-family.png" alt="Fruitful family — manage members and share code" width={1179} height={2556} className="w-full h-auto" quality={90} />
+                  </div>
                 </div>
+                <p className="text-center mt-4 text-[10px] font-bold text-[#4ADE80] uppercase tracking-wider font-[family-name:var(--font-heading)]">Family</p>
               </div>
-              <p className="text-center mt-4 text-[10px] font-bold text-[#4ADE80] uppercase tracking-wider font-[family-name:var(--font-heading)]">Family</p>
-            </div>
 
-            {/* Phone 3 — Goals (right, slightly smaller) */}
-            <div className="relative order-3 sm:order-3 sm:-mb-8">
-              <div className="relative w-[210px] sm:w-[230px] lg:w-[250px]">
-                <div className="rounded-[2.3rem] border-[5px] border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden shadow-xl shadow-black/50">
-                  <Image src="/images/app-screenshot-goals.png" alt="Fruitful goals — track progress and streaks" width={1179} height={2556} className="w-full h-auto" quality={90} />
+              <div className="relative z-10">
+                <div className="relative w-[260px] lg:w-[280px]">
+                  <div className="rounded-[2.5rem] border-[5px] border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden shadow-2xl shadow-black/60">
+                    <Image src="/images/app-screenshot-dashboard.png" alt="Fruitful dashboard — screen time tracking" width={1179} height={2556} className="w-full h-auto" quality={90} />
+                  </div>
                 </div>
+                <p className="text-center mt-4 text-[10px] font-bold text-[#FF6B9D] uppercase tracking-wider font-[family-name:var(--font-heading)]">Dashboard</p>
               </div>
-              <p className="text-center mt-4 text-[10px] font-bold text-[#FF8FAE] uppercase tracking-wider font-[family-name:var(--font-heading)]">Goals</p>
+
+              <div className="relative sm:-mb-8">
+                <div className="relative w-[230px] lg:w-[250px]">
+                  <div className="rounded-[2.3rem] border-[5px] border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden shadow-xl shadow-black/50">
+                    <Image src="/images/app-screenshot-goals.png" alt="Fruitful goals — track progress and streaks" width={1179} height={2556} className="w-full h-auto" quality={90} />
+                  </div>
+                </div>
+                <p className="text-center mt-4 text-[10px] font-bold text-[#FF8FAE] uppercase tracking-wider font-[family-name:var(--font-heading)]">Goals</p>
+              </div>
             </div>
           </div>
 
