@@ -1,65 +1,85 @@
 "use client";
 
-const characters = [
-  { name: "Annie", family: "Apple", rarity: "legendary", color: "#FFB800", bg: "from-amber-500/20 to-amber-600/5", borderColor: "border-amber-400/40", dotColor: "bg-amber-400" },
-  { name: "Wade", family: "Watermelon", rarity: "epic", color: "#A855F7", bg: "from-purple-500/20 to-purple-600/5", borderColor: "border-purple-400/40", dotColor: "bg-purple-400" },
-  { name: "Bobby", family: "Banana", rarity: "rare", color: "#3B82F6", bg: "from-blue-500/20 to-blue-600/5", borderColor: "border-blue-400/40", dotColor: "bg-blue-400" },
-  { name: "Sally", family: "Strawberry", rarity: "common", color: "#888", bg: "from-gray-500/10 to-gray-600/5", borderColor: "border-gray-500/30", dotColor: "bg-gray-400" },
-  { name: "Charlie", family: "Cherry", rarity: "epic", color: "#A855F7", bg: "from-purple-500/20 to-purple-600/5", borderColor: "border-purple-400/40", dotColor: "bg-purple-400" },
-  { name: "Penny", family: "Peach", rarity: "rare", color: "#3B82F6", bg: "from-blue-500/20 to-blue-600/5", borderColor: "border-blue-400/40", dotColor: "bg-blue-400" },
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+
+const cards = [
+  { rarity: "Common", image: "/images/card-common.png", color: "#C0C0C0", glowColor: "rgba(192,192,192,0.15)" },
+  { rarity: "Rare", image: "/images/card-rare.png", color: "#3B82F6", glowColor: "rgba(59,130,246,0.2)" },
+  { rarity: "Epic", image: "/images/card-epic.png", color: "#A855F7", glowColor: "rgba(168,85,247,0.2)" },
+  { rarity: "Legendary", image: "/images/card-legendary.png", color: "#FFB800", glowColor: "rgba(255,184,0,0.25)" },
 ];
 
-const fruitEmojis: Record<string, string> = {
-  Apple: "🍎",
-  Watermelon: "🍉",
-  Banana: "🍌",
-  Strawberry: "🍓",
-  Cherry: "🍒",
-  Peach: "🍑",
-};
-
-const rarityLabel: Record<string, string> = {
-  common: "Common",
-  rare: "Rare",
-  epic: "Epic",
-  legendary: "Legendary",
-};
-
 export function CharacterCards() {
-  return (
-    <div className="reveal mt-20">
-      <p className="text-center text-[10px] font-bold text-[#666] uppercase tracking-[0.25em] mb-8 font-[family-name:var(--font-heading)]">
-        12 Families &middot; 4 Rarities &middot; 48 Cards to Collect
-      </p>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
-        {characters.map((char, i) => (
-          <div
-            key={char.name}
-            className={`reveal delay-${(i % 6) + 1} group relative rounded-2xl border ${char.borderColor} bg-gradient-to-b ${char.bg} p-4 text-center transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-default`}
-            style={{ ["--glow-color" as string]: char.color }}
-          >
-            {/* Rarity shimmer for legendary */}
-            {char.rarity === "legendary" && (
-              <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                <div className="absolute inset-0 animate-shimmer opacity-30" />
-              </div>
-            )}
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-            {/* Character avatar placeholder */}
-            <div className="relative mx-auto w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#1A1A1A] border-2 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300"
-              style={{ borderColor: `${char.color}40` }}>
-              <span className="text-2xl sm:text-3xl">{fruitEmojis[char.family]}</span>
+  // Subtle tilt effect on hover
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent, index: number) => {
+    if (hoveredIndex !== index) return;
+    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 12;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -12;
+    setTilt({ x, y });
+  };
+
+  return (
+    <div ref={containerRef} className="reveal mt-20">
+      <p className="text-center text-xs font-bold text-[#888] uppercase tracking-[0.2em] mb-3 font-[family-name:var(--font-heading)]">
+        Apple Annie — One Family, Four Rarities
+      </p>
+      <p className="text-center text-[11px] text-[#666] mb-10 max-w-md mx-auto">
+        Every character has 4 versions. Rarer cards come from better crates.
+      </p>
+
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 max-w-5xl mx-auto">
+        {cards.map((card, i) => (
+          <div
+            key={card.rarity}
+            className={`reveal delay-${i + 1} group relative cursor-default`}
+            onMouseEnter={() => setHoveredIndex(i)}
+            onMouseLeave={() => { setHoveredIndex(null); setTilt({ x: 0, y: 0 }); }}
+            onMouseMove={(e) => handleMouseMove(e, i)}
+          >
+            {/* Glow behind card */}
+            <div
+              className="absolute inset-0 rounded-2xl blur-[30px] transition-opacity duration-500"
+              style={{
+                background: card.glowColor,
+                opacity: hoveredIndex === i ? 1 : 0.3,
+                transform: "scale(0.9)",
+              }}
+            />
+
+            {/* Card */}
+            <div
+              className="relative rounded-xl overflow-hidden transition-all duration-300 group-hover:scale-[1.03]"
+              style={{
+                transform: hoveredIndex === i
+                  ? `perspective(600px) rotateY(${tilt.x}deg) rotateX(${tilt.y}deg) scale(1.03)`
+                  : "perspective(600px) rotateY(0) rotateX(0) scale(1)",
+                transition: "transform 0.15s ease-out",
+              }}
+            >
+              <Image
+                src={card.image}
+                alt={`Apple Annie ${card.rarity} card`}
+                width={800}
+                height={533}
+                className="w-full h-auto"
+                quality={90}
+              />
             </div>
 
-            {/* Name */}
-            <p className="text-sm font-bold font-[family-name:var(--font-heading)] text-[#EEE] mb-0.5">{char.name}</p>
-            <p className="text-[10px] text-[#888] font-[family-name:var(--font-heading)]">{char.family} Family</p>
-
-            {/* Rarity badge */}
-            <div className="mt-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full" style={{ backgroundColor: `${char.color}15` }}>
-              <span className={`w-1.5 h-1.5 rounded-full ${char.dotColor}`} />
-              <span className="text-[9px] font-bold uppercase tracking-wider font-[family-name:var(--font-heading)]" style={{ color: char.color }}>
-                {rarityLabel[char.rarity]}
+            {/* Rarity label below */}
+            <div className="mt-3 text-center">
+              <span
+                className="text-xs font-bold uppercase tracking-wider font-[family-name:var(--font-heading)]"
+                style={{ color: card.color }}
+              >
+                {card.rarity}
               </span>
             </div>
           </div>
