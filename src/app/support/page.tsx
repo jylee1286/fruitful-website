@@ -186,16 +186,16 @@ export default function SupportPage() {
           <h1 className="reveal text-4xl sm:text-5xl font-bold font-[family-name:var(--font-heading)] tracking-tight mb-4">
             Help Center
           </h1>
-          <p className="reveal delay-100 text-[#A0A0A0] text-lg">
+          <p className="reveal delay-1 text-[#999] text-base">
             Find answers to common questions about Fruitful.
           </p>
         </div>
 
         {/* Search */}
-        <div className="reveal delay-200 mb-12">
+        <div className="reveal delay-2 mb-12">
           <div className="relative">
             <svg
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#666666]"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#555]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -212,7 +212,7 @@ export default function SupportPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search for help..."
-              className="w-full pl-12 pr-4 py-4 rounded-2xl bg-[#111111] border border-white/10 text-white placeholder-[#666666] focus:outline-none focus:border-[#FF6B9D]/30 transition-colors"
+              className="w-full pl-12 pr-4 py-4 rounded-2xl bg-[#0E0E0E] border border-white/[0.06] text-white placeholder-[#555] focus:outline-none focus:border-[#FF6B9D]/20 transition-colors"
             />
           </div>
         </div>
@@ -221,7 +221,7 @@ export default function SupportPage() {
         <div className="space-y-8">
           {filtered.map((category) => (
             <div key={category.title} className="reveal">
-              <h2 className="text-lg font-semibold font-[family-name:var(--font-heading)] mb-4 gradient-text">
+              <h2 className="text-lg font-semibold font-[family-name:var(--font-heading)] mb-4 gradient-text-pink">
                 {category.title}
               </h2>
               <div className="space-y-2">
@@ -231,15 +231,15 @@ export default function SupportPage() {
                   return (
                     <div
                       key={key}
-                      className="rounded-xl border border-white/5 bg-[#111111] overflow-hidden"
+                      className="rounded-xl border border-white/[0.04] bg-[#0E0E0E] overflow-hidden"
                     >
                       <button
                         onClick={() => setOpenItem(isOpen ? null : key)}
-                        className="w-full flex items-center justify-between p-4 sm:p-5 text-left hover:bg-white/[0.02] transition-colors"
+                        className="w-full flex items-center justify-between p-4 sm:p-5 text-left hover:bg-white/[0.01] transition-colors"
                       >
                         <span className="text-sm sm:text-base font-medium pr-4">{item.q}</span>
                         <svg
-                          className={`w-5 h-5 text-[#666666] shrink-0 transition-transform duration-300 ${
+                          className={`w-5 h-5 text-[#555] shrink-0 transition-transform duration-300 ${
                             isOpen ? "rotate-180" : ""
                           }`}
                           fill="none"
@@ -255,7 +255,7 @@ export default function SupportPage() {
                         }`}
                       >
                         <div className="px-4 sm:px-5 pb-4 sm:pb-5">
-                          <p className="text-sm text-[#A0A0A0] leading-relaxed">{item.a}</p>
+                          <p className="text-sm text-[#999] leading-relaxed">{item.a}</p>
                         </div>
                       </div>
                     </div>
@@ -267,16 +267,16 @@ export default function SupportPage() {
         </div>
 
         {/* Contact */}
-        <div className="reveal mt-16 text-center p-8 rounded-2xl border border-white/5 bg-[#111111]">
+        <div className="reveal mt-16 text-center p-8 rounded-2xl glass-card">
           <h3 className="text-xl font-semibold font-[family-name:var(--font-heading)] mb-2">
             Still need help?
           </h3>
-          <p className="text-[#A0A0A0] mb-6">
+          <p className="text-[#999] mb-6 text-sm">
             We&apos;re here for you. Reach out and we&apos;ll get back to you as soon as possible.
           </p>
           <a
             href="mailto:support@getfruitful.app"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#FF6B9D] to-[#C44DFF] text-white font-semibold hover:opacity-90 transition-all duration-200"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FF6B9D] text-[#050505] font-bold text-sm hover:bg-[#FF8FAE] transition-all duration-200 font-[family-name:var(--font-heading)]"
           >
             Contact Support
           </a>

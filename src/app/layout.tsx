@@ -20,16 +20,10 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Fruitful — Screen Time That Kids Actually Want to Follow",
+  title: "Fruitful — Screen Time Kids Actually Want to Follow",
   description:
-    "Fruitful is an iOS screen time app that turns healthy digital habits into a game. Kids earn coins, collect characters, and trade with friends — all while staying under their screen time limits.",
-  keywords: ["screen time", "parental controls", "kids", "iOS", "family", "screen time management"],
-  openGraph: {
-    title: "Fruitful — Screen Time That Kids Actually Want to Follow",
-    description:
-      "Turn screen time battles into a game. Kids earn coins for staying under limits, collect 48 characters, and trade with friends.",
-    type: "website",
-  },
+    "Fruitful is an iOS screen time app that turns healthy digital habits into a collecting game. Kids earn coins, collect characters, and trade with friends.",
+  keywords: ["screen time", "parental controls", "kids", "iOS", "family", "screen time management", "fruitful"],
 };
 
 export default function RootLayout({
@@ -39,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
-      <body className="font-[family-name:var(--font-body)] antialiased bg-[#0A0A0A] text-white">
+      <body className="font-[family-name:var(--font-body)] antialiased">
         <Navigation />
         <main>{children}</main>
         <Footer />

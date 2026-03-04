@@ -5,11 +5,11 @@ export default function PrivacyPage() {
         <h1 className="reveal text-4xl sm:text-5xl font-bold font-[family-name:var(--font-heading)] tracking-tight mb-4">
           Privacy Policy
         </h1>
-        <p className="reveal delay-100 text-[#A0A0A0] mb-12">
+        <p className="reveal delay-1 text-[#999] mb-12">
           Last updated: March 2026
         </p>
 
-        <div className="reveal delay-200 prose-custom space-y-8">
+        <div className="reveal delay-2 prose-dark space-y-8">
           <section>
             <h2>Overview</h2>
             <p>
