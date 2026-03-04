@@ -123,56 +123,72 @@ export default function Home() {
         <div className="watermelon-divider" />
 
         <div className="max-w-6xl mx-auto px-5 sm:px-8 pt-20 sm:pt-24">
-          <div className="grid lg:grid-cols-[1fr,1.1fr] gap-16 lg:gap-20 items-start">
-            {/* Phone mockup — real screenshot */}
-            <div className="reveal-left relative flex justify-center lg:sticky lg:top-28">
-              <div className="relative w-[280px] sm:w-[320px]">
-                <div className="rounded-[2.8rem] border-[6px] border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden shadow-2xl shadow-black/60">
-                  <Image
-                    src="/images/app-screenshot-dashboard.png"
-                    alt="Fruitful app dashboard showing screen time tracking"
-                    width={1179}
-                    height={2556}
-                    className="w-full h-auto"
-                    quality={90}
-                  />
+          {/* Copy — centered above phones */}
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <p className="reveal text-xs font-bold text-[#FF6B9D] uppercase tracking-[0.2em] mb-3 font-[family-name:var(--font-heading)]">For Parents</p>
+            <h2 className="reveal delay-1 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-[family-name:var(--font-heading)] tracking-tight leading-tight mb-6">
+              You set the limits.<br /><span className="gradient-text-warm">We enforce them.</span>
+            </h2>
+            <p className="reveal delay-2 text-[#AAA] text-base leading-relaxed">
+              Fruitful uses Apple&apos;s FamilyControls to block apps at the system level — even when the app isn&apos;t open. No workarounds. Manage everything from your own phone.
+            </p>
+          </div>
+
+          {/* Three phone mockups */}
+          <div className="reveal delay-3 flex flex-col sm:flex-row items-end justify-center gap-6 sm:gap-8 lg:gap-10">
+            {/* Phone 1 — Dashboard (center, tallest) */}
+            <div className="relative order-2 sm:order-2 z-10">
+              <div className="relative w-[240px] sm:w-[260px] lg:w-[280px]">
+                <div className="rounded-[2.5rem] border-[5px] border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden shadow-2xl shadow-black/60">
+                  <Image src="/images/app-screenshot-dashboard.png" alt="Fruitful dashboard — screen time tracking" width={1179} height={2556} className="w-full h-auto" quality={90} />
                 </div>
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-28 h-1 rounded-full bg-[#333]" />
               </div>
+              <p className="text-center mt-4 text-[10px] font-bold text-[#FF6B9D] uppercase tracking-wider font-[family-name:var(--font-heading)]">Dashboard</p>
             </div>
 
-            {/* Copy */}
-            <div>
-              <p className="reveal text-xs font-bold text-[#FF6B9D] uppercase tracking-[0.2em] mb-3 font-[family-name:var(--font-heading)]">For Parents</p>
-              <h2 className="reveal delay-1 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-[family-name:var(--font-heading)] tracking-tight leading-tight mb-6">
-                You set the limits.<br /><span className="gradient-text-warm">We enforce them.</span>
-              </h2>
-              <p className="reveal delay-2 text-[#AAA] text-base leading-relaxed mb-10 max-w-md">
-                Fruitful uses Apple&apos;s FamilyControls to block apps at the system level — even when the app isn&apos;t open. No workarounds. Manage everything from your own phone.
-              </p>
+            {/* Phone 2 — Family (left, slightly smaller) */}
+            <div className="relative order-1 sm:order-1 sm:-mb-8">
+              <div className="relative w-[210px] sm:w-[230px] lg:w-[250px]">
+                <div className="rounded-[2.3rem] border-[5px] border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden shadow-xl shadow-black/50">
+                  <Image src="/images/app-screenshot-family.png" alt="Fruitful family — manage members and share code" width={1179} height={2556} className="w-full h-auto" quality={90} />
+                </div>
+              </div>
+              <p className="text-center mt-4 text-[10px] font-bold text-[#4ADE80] uppercase tracking-wider font-[family-name:var(--font-heading)]">Family</p>
+            </div>
 
-              <div className="space-y-6">
-                {[
-                  { title: "Real-time tracking", desc: "See every app, every minute. Know exactly where the time goes." },
-                  { title: "Remote control", desc: "Change limits from your phone. Changes push to your child's device instantly." },
-                  { title: "System-level blocking", desc: "Apps get blocked by iOS itself. Can't be bypassed even when Fruitful is closed." },
-                  { title: "Custom schedules", desc: "Different rules for weekdays and weekends. Block social media after 9pm." },
-                  { title: "Smart goals", desc: "Set streak, reduction, or app-free goals. Progress is tracked automatically." },
-                ].map((item, i) => (
-                  <div key={item.title} className={`reveal delay-${Math.min(i + 2, 6)}`}>
-                    <div className="flex items-start gap-3">
-                      <svg className="w-4 h-4 mt-1 text-[#4ADE80] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <div>
-                        <p className="text-sm font-semibold font-[family-name:var(--font-heading)] mb-0.5 text-[#EEE]">{item.title}</p>
-                        <p className="text-sm text-[#999] leading-relaxed">{item.desc}</p>
-                      </div>
-                    </div>
+            {/* Phone 3 — Goals (right, slightly smaller) */}
+            <div className="relative order-3 sm:order-3 sm:-mb-8">
+              <div className="relative w-[210px] sm:w-[230px] lg:w-[250px]">
+                <div className="rounded-[2.3rem] border-[5px] border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden shadow-xl shadow-black/50">
+                  <Image src="/images/app-screenshot-goals.png" alt="Fruitful goals — track progress and streaks" width={1179} height={2556} className="w-full h-auto" quality={90} />
+                </div>
+              </div>
+              <p className="text-center mt-4 text-[10px] font-bold text-[#FF8FAE] uppercase tracking-wider font-[family-name:var(--font-heading)]">Goals</p>
+            </div>
+          </div>
+
+          {/* Feature list below phones */}
+          <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-6 max-w-4xl mx-auto">
+            {[
+              { title: "Real-time tracking", desc: "See every app, every minute. Know exactly where the time goes." },
+              { title: "Remote control", desc: "Change limits from your phone. Changes push instantly." },
+              { title: "System-level blocking", desc: "Apps get blocked by iOS itself. Can't be bypassed." },
+              { title: "Custom schedules", desc: "Different rules for weekdays and weekends." },
+              { title: "Smart goals", desc: "Streak, reduction, or app-free goals. Auto-tracked." },
+              { title: "Family network", desc: "6-digit code to join. Parents approve. Syncs instantly." },
+            ].map((item, i) => (
+              <div key={item.title} className={`reveal delay-${(i % 3) + 1}`}>
+                <div className="flex items-start gap-3">
+                  <svg className="w-4 h-4 mt-0.5 text-[#4ADE80] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <div>
+                    <p className="text-sm font-semibold font-[family-name:var(--font-heading)] mb-0.5 text-[#EEE]">{item.title}</p>
+                    <p className="text-xs text-[#999] leading-relaxed">{item.desc}</p>
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
