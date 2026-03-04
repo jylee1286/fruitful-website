@@ -124,47 +124,20 @@ export default function Home() {
 
         <div className="max-w-6xl mx-auto px-5 sm:px-8 pt-20 sm:pt-24">
           <div className="grid lg:grid-cols-[1fr,1.1fr] gap-16 lg:gap-20 items-start">
-            {/* Phone mockup — BIGGER */}
+            {/* Phone mockup — real screenshot */}
             <div className="reveal-left relative flex justify-center lg:sticky lg:top-28">
-              <div className="relative w-[300px] sm:w-[340px]">
-                <div className="rounded-[2.5rem] border-[6px] border-[#1A1A1A] bg-[#0A0A0A] overflow-hidden shadow-2xl shadow-black/60">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-[#1A1A1A] rounded-b-2xl z-10" />
-                  <div className="pt-10 pb-6 px-5 min-h-[540px]">
-                    <p className="text-[11px] text-[#888] uppercase tracking-wider font-[family-name:var(--font-heading)]">Today&apos;s Screen Time</p>
-                    <div className="flex items-end justify-between mt-2 mb-5">
-                      <p className="text-3xl font-bold font-[family-name:var(--font-heading)]">2h 14m</p>
-                      <div className="w-14 h-14 rounded-full border-[3px] border-[#4ADE80] flex items-center justify-center">
-                        <span className="text-[11px] font-bold text-[#4ADE80]">67%</span>
-                      </div>
-                    </div>
-                    {[
-                      { name: "YouTube", time: "52m", limit: "1h", pct: 87, color: "bg-red-500" },
-                      { name: "TikTok", time: "38m", limit: "45m", pct: 84, color: "bg-[#FF6B9D]" },
-                      { name: "Roblox", time: "24m", limit: "1h", pct: 40, color: "bg-[#4ADE80]" },
-                      { name: "Messages", time: "20m", limit: "30m", pct: 67, color: "bg-blue-400" },
-                      { name: "Safari", time: "12m", limit: "45m", pct: 27, color: "bg-cyan-400" },
-                    ].map((app) => (
-                      <div key={app.name} className="flex items-center gap-3 py-3 border-b border-white/[0.04] last:border-0">
-                        <div className={`w-7 h-7 rounded-lg ${app.color} opacity-80 shrink-0`} />
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between mb-1.5">
-                            <span className="text-[11px] font-medium text-[#DDD]">{app.name}</span>
-                            <span className="text-[10px] text-[#888]">{app.time}/{app.limit}</span>
-                          </div>
-                          <div className="h-[3px] rounded-full bg-[#1A1A1A] overflow-hidden">
-                            <div className={`h-full rounded-full ${app.color}`} style={{ width: `${app.pct}%` }} />
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+              <div className="relative w-[280px] sm:w-[320px]">
+                <div className="rounded-[2.8rem] border-[6px] border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden shadow-2xl shadow-black/60">
+                  <Image
+                    src="/images/app-screenshot-dashboard.png"
+                    alt="Fruitful app dashboard showing screen time tracking"
+                    width={1179}
+                    height={2556}
+                    className="w-full h-auto"
+                    quality={90}
+                  />
                 </div>
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-28 h-1 rounded-full bg-[#222]" />
-
-                {/* Floating mascot peeking from behind phone */}
-                <div className="absolute -top-8 -right-14 animate-float-offset">
-                  <Image src="/images/mascot-explore.png" alt="" width={90} height={90} className="drop-shadow-[0_0_20px_rgba(255,107,157,0.2)]" />
-                </div>
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-28 h-1 rounded-full bg-[#333]" />
               </div>
             </div>
 
