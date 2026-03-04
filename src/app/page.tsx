@@ -15,7 +15,7 @@ export default function Home() {
         <SeedParticles />
 
         <div className="relative max-w-6xl mx-auto px-5 sm:px-8 pt-28 sm:pt-32 pb-20 w-full">
-          <div className="grid lg:grid-cols-[1fr,auto] gap-16 lg:gap-20 items-center">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 items-center justify-between">
             <div className="max-w-2xl">
               <div className="reveal inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#4ADE80]/20 bg-[#4ADE80]/[0.05] mb-8">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#4ADE80] animate-pulse" />
