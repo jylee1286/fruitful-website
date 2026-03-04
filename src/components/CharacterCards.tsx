@@ -27,6 +27,9 @@ export function CharacterCards() {
 
   return (
     <div ref={containerRef} className="reveal mt-20">
+      <p className="text-center text-[10px] font-bold text-[#666] uppercase tracking-[0.25em] mb-6 font-[family-name:var(--font-heading)]">
+        12 Families &middot; 4 Rarities &middot; 48 Cards to Collect
+      </p>
       <p className="text-center text-xs font-bold text-[#888] uppercase tracking-[0.2em] mb-3 font-[family-name:var(--font-heading)]">
         Apple Annie — One Family, Four Rarities
       </p>

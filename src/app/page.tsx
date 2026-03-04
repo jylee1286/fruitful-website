@@ -231,24 +231,7 @@ export default function Home() {
           {/* Character Cards — visual grid */}
           <CharacterCards />
 
-          {/* Rarity tiers */}
-          <div className="reveal mt-10">
-            <div className="flex items-center justify-center gap-6">
-              {[
-                { tier: "Common", color: "text-[#888]", border: "border-[#888]/30" },
-                { tier: "Rare", color: "text-blue-400", border: "border-blue-400/30" },
-                { tier: "Epic", color: "text-purple-400", border: "border-purple-400/30" },
-                { tier: "Legendary", color: "text-amber-400", border: "border-amber-400/30" },
-              ].map((t) => (
-                <div key={t.tier} className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full border ${t.border}`}>
-                  <span className={`w-1.5 h-1.5 rounded-full ${t.color.replace('text-', 'bg-')}`} />
-                  <span className={`text-[10px] font-bold uppercase tracking-wider ${t.color} font-[family-name:var(--font-heading)]`}>
-                    {t.tier}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+
         </div>
       </section>
 
