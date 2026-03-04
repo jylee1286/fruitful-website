@@ -56,7 +56,7 @@ export default function Home() {
             </div>
 
             {/* Watermelon character — right side of hero */}
-            <div className="relative hidden lg:flex items-center justify-center">
+            <div className="relative hidden lg:flex items-center justify-center w-[360px] shrink-0">
               <div className="absolute w-[360px] h-[360px] rounded-full border border-dashed border-[#4ADE80]/10 animate-spin-slow" />
               <div className="relative animate-float-gentle">
                 <div className="absolute inset-0 bg-[#4ADE80]/10 rounded-full blur-[80px] scale-90" />
