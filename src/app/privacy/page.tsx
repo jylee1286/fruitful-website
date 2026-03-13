@@ -178,8 +178,8 @@ export default function PrivacyPage() {
             </p>
             <p>
               To exercise any of these rights or for questions about your data, contact us at{" "}
-              <a href="mailto:privacy@getfruitful.app" className="text-[#FF6B9D] hover:underline">
-                privacy@getfruitful.app
+              <a href="mailto:fruitfulapp1@gmail.com" className="text-[#FF6B9D] hover:underline">
+                fruitfulapp1@gmail.com
               </a>.
             </p>
           </section>
@@ -218,8 +218,8 @@ export default function PrivacyPage() {
             <h2>Contact Us</h2>
             <p>
               If you have questions about this Privacy Policy or our data practices, contact us at:{" "}
-              <a href="mailto:privacy@getfruitful.app" className="text-[#FF6B9D] hover:underline">
-                privacy@getfruitful.app
+              <a href="mailto:fruitfulapp1@gmail.com" className="text-[#FF6B9D] hover:underline">
+                fruitfulapp1@gmail.com
               </a>
             </p>
           </section>
